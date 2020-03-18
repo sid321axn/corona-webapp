@@ -70,12 +70,12 @@ def upload():
         os.remove(file_path)#removes file from the server after prediction has been returned
 
         # Arrange the correct return according to the model. 
-		# In this model 1 is Pneumonia and 0 is Normal.
+		# In this model 1 is covid and 0 is Normal.
         str1 = 'Patient Suffering from COVID-19'
         str2 = 'Normal'
         if pred[0] == 0:
             return str2
-        elif pred[0] == 1:
+        else:
             return str1
     return None
 
