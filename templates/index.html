@@ -1,7 +1,10 @@
 {% extends "base.html" %} {% block content %}
 
 <body>
-This web application is based on a novel deep learning architecture which is a combination of CovNets and Depthwise separable CovNets, trained to recognise Corona Virus from chest x-ray images. The neural network achieved accuracy exceeding 98% on the relevant test set. Please note that the predictive accuracy of the model, depends on the quality and quantity of the training data. Therefore the model has limitations and cannot be used for definite clinical predictions! Instead it can be used for research and comparison purposes (please see notes below).
+This web application is based on a novel deep learning architecture which is a combination of CovNets and Depthwise separable CovNets, trained to recognise Corona Virus from chest x-ray images. The neural network achieved accuracy exceeding 98% on the relevant test set. Please note that the predictive accuracy of the model, depends on the quality and quantity of the training data and there is a very scarce availability of COVID 19 affected chest x ray images. Therefore the model has limitations and cannot be used for definite clinical predictions! Instead it can be used for research and comparison purposes. But we are constantly updating images dataset available on github as per the initiative of <a href="https://josephpcohen.com/w/">Joseph Paul Cohen. Postdoctoral Fellow, Mila, University of Montreal</a>
+The 2019 novel coronavirus (COVID-19) presents several unique features. While the diagnosis is confirmed using polymerase chain reaction (PCR), infected patients with pneumonia may present on chest X-ray and computed tomography (CT) images with a pattern that is only moderately characteristic for the human eye <a href="https://pubs.rsna.org/doi/10.1148/ryct.2020200034">Ng, 2020.</a> While PCR tests offer many advantages they are physical things that require shipping the test or the sample. X-ray machines can be plugged in to screen patients as long as they have electricity. Imagine a future where we run out of tests and then the majority of radiologists get sick. AI tools can help general practitioners to triage and treat patients. Companies are developing AI tools and deploying them at hospitals. This is our sincere attempt to build AI based diagnostic tool which will help in diagnosing novel coronavirus in remote locations and where medical resources are scarce.
+We are constantly updating our model and retrain our model with the availability of images and in the next phase we are also developing AI based diagnostic tool which can classify COVID 19, SARS, Bacterial infections and Normal cases.
+
 </body>
 
 <h2></h2>
@@ -13,14 +16,26 @@ This web application is based on a novel deep learning architecture which is a c
         </label>
         <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
     </form>
-
+<div class="row">
+    <div class="col-sm-3 col-md-6 col-lg-4">
     <div class="image-section" style="display:none;">
         <div class="img-preview">
             <div id="imagePreview">
             </div>
         </div>
         <div>
+
+        </div>
+    </div>
             <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        
+        
+        </div>
+
+        <div class="col-sm-3 col-md-6 col-lg-4">
+
+<img src="covid.png">
+
         </div>
     </div>
 
@@ -32,12 +47,25 @@ This web application is based on a novel deep learning architecture which is a c
 
 </div>
 <body>
-NOTES
+    <div>
+<strong>Myth Buster !!!</strong><br>
+Following are some common myths spreading about novel corona virus. Be aware of these following myths:
 <ul>
-<li>This deep learning model has been trained and validated, using the following dataset: <a href="https://github.com/ieee8023/covid-chestxray-dataset">COVID-19 image data collection</a></li>
-<li><b style="color:red;">The suitability of this deep learning model for clinical use has not been validated. Therefore it cannot be used for any clinical purpose! It can be used for research purposes and for comparison with other similar models.</b></li>
-<li>This web application has been created using code developed by Manu Siddhartha (please see the following repository: </h2><a href="https://github.com/sid321axn/malaria-detection-app">https://github.com/sid321axn/malaria-detection-app</a></li>
+<li><b>Wearing the mask will protect from the virus</b>Masks are for people infected with the virus,not for a healthy individual.</li>
+<li><b>The virus only affects older people</b>It is a half truth. It effects everybody, even children. Though, older and sick people more likely to have a severe disease as compared to a healthy person.</li>
+<li><b>The virus is only spreading in colder weather countries</b>It is not true. It can spread in any type of climate. Relatively warmer south east asian countries like Malaysia, Indonesia, Thailand and Phillipines recorded highest rate of infection so far. </li>
+<li><b>Corona Virus is the most dangerous virus</b>There are a plethora of different kinds of viruses out there in the world, which is more deadlier than COVID-19.Coronavirus is a fatal disease, but not every person who gets infected with this virus dies. Several people have been cured until now. As per the scientists, coronavirus is a mild type of virus infection with only 2 per cent fatality rate.</li>
+<li><b>Rinsing your mouth with salt water can cure coronavirus.</b>It is medically inaccurate as the Wuhan Union Hospital and Academician Zhong’s team has officially refuted the rumour that saline water can help in treating the Corona virus. Additionally, the World Health Organization has also stated that there is no evidence to suggest that rinsing the mouth with saline solution is effective in preventing infection.</li>
+
+
 <li>For any comments or suggestions please contact Manu Siddhartha at: sid321axn@gmail.com</li>
 </ul>
+
+    </div>
+<div><strong>NOTES</strong>
+<ul>
+<li>This deep learning model has been trained and validated, using the following dataset: <a href="https://github.com/ieee8023/covid-chestxray-dataset">COVID-19 image data collection</a></li>
+<li>For any comments or suggestions please contact Manu Siddhartha at: sid321axn@gmail.com or visit my website <a href="www.manusid.com"> Manu Siddhartha</a></li>
+</ul></div>
 </body>
 {% endblock %}
