@@ -39,6 +39,7 @@ def model_predict(img_path, model):
 
     # Preprocessing the image
     img = image.img_to_array(img)
+    img = img/255
     img = np.expand_dims(img, axis=0)
 
    
