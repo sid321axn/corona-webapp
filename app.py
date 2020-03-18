@@ -74,9 +74,9 @@ def upload():
         str1 = 'Patient Suffering from COVID-19'
         str2 = 'Normal'
         if pred[0] == 0:
-            return str1
-        else:
             return str2
+        elif pred[0] == 1:
+            return str1
     return None
 
     #this section is used by gunicorn to serve the app on Heroku
